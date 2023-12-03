@@ -16,6 +16,13 @@ namespace Raszpberry_WEBAPI
     {
         public static void Main(string[] args)
         {
+            //var builder = WebApplication.CreateBuilder(args);
+            //var app = builder.Build();
+            //app.MapGet("/", () => $"EnvironmentName: {app.Environment.EnvironmentName} \n" +
+            //$"ApplicationName: {app.Environment.ApplicationName} \n" +
+            //$"WebRootPath: {app.Environment.WebRootPath} \n" +
+            //$"ContentRootPath: {app.Environment.ContentRootPath}");
+            //app.Run();
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -40,6 +47,10 @@ namespace Raszpberry_WEBAPI
                                 Version = "v1"
                             });
                         });
+                        services.AddCors(c =>
+                        {
+                            c.AddPolicy("AllowSpecificOrigin", builder => builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod());
+                        });
                     });
 
                     webBuilder.Configure(app =>
@@ -54,11 +65,10 @@ namespace Raszpberry_WEBAPI
                         app.UseHttpsRedirection();
                         app.UseRouting();
                         app.UseAuthorization();
-
+                        app.UseCors("AllowSpecificOrigin");
                         app.UseEndpoints(endpoints =>
                         {
                             endpoints.MapControllers();
-                            
                         });
                     });
                 });
