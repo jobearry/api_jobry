@@ -1,4 +1,4 @@
-# Raszpberry_WEBAPI
+# Ranthanz_WEBAPI
 
 This is a basic WEBAPI that works with SQLServer
 -
