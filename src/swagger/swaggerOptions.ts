@@ -1,7 +1,7 @@
 import swaggerJsdoc from 'swagger-jsdoc';
 
 export const PORT = 3000;
-export const isDevelopment = process.env.NODE_ENV !== 'development';
+export const isDevelopment = process.env.NODE_ENV === 'development';
 export const swaggerOpts: swaggerJsdoc.Options = {
   definition:{
     openapi: '3.0.0',
