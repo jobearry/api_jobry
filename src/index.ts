@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
-import { PORT, swaggerOpts } from "./swagger/swaggerOptions";
+import { isDevelopment, PORT, swaggerOpts } from "./swagger/swaggerOptions";
 import { userRouter } from './routes/user.route'
 import dotenv from 'dotenv';
 
@@ -17,9 +17,13 @@ server.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 server.use('/', userRouter)
 
-server.listen(PORT, () => {
-  console.log(`Server is running at ${swaggerOpts.definition?.servers?.[0]?.url || 'undefined'}`);
-  console.log(`Swagger docs available at ${swaggerOpts.definition?.servers?.[0]?.url || 'undefined'}/api`);
-
-  // console.log("🚀 ~ swaggerSpec:", JSON.stringify(swaggerSpec, null, 2))
-})
+if(isDevelopment){
+  server.listen(PORT, () => {
+    console.log(`Server is running at ${swaggerOpts.definition?.servers?.[0]?.url || 'undefined'}`);
+    console.log(`Swagger docs available at ${swaggerOpts.definition?.servers?.[0]?.url || 'undefined'}/api`);
+  
+    // console.log("🚀 ~ swaggerSpec:", JSON.stringify(swaggerSpec, null, 2))
+  })
+}
+  
+export default server

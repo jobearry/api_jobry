@@ -1,6 +1,7 @@
 import swaggerJsdoc from 'swagger-jsdoc';
 
 export const PORT = 3000;
+export const isDevelopment = process.env.NODE_ENV !== 'development';
 export const swaggerOpts: swaggerJsdoc.Options = {
   definition:{
     openapi: '3.0.0',
@@ -12,7 +13,7 @@ export const swaggerOpts: swaggerJsdoc.Options = {
 
     servers: [
       {
-        url: process.env.BASE_URL || `http://localhost:${PORT}`,
+        url: isDevelopment?`http://localhost:${PORT}`: process.env.BASE_URL
       }
     ]
   },
