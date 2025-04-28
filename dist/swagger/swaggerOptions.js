@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.swaggerOpts = exports.isDevelopment = exports.PORT = void 0;
 exports.PORT = 3000;
-exports.isDevelopment = process.env.NODE_ENV !== 'development';
+exports.isDevelopment = process.env.NODE_ENV === 'development';
 exports.swaggerOpts = {
     definition: {
         openapi: '3.0.0',
