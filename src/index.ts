@@ -3,6 +3,9 @@ import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import { PORT, swaggerOpts } from "./swagger/swaggerOptions";
 import { userRouter } from './routes/user.route'
+import dotenv from 'dotenv';
+
+dotenv.config()
 const server: Application = express()
 
 //middleware
