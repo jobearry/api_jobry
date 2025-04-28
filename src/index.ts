@@ -24,6 +24,7 @@ server.listen(PORT, () => {
   console.log(`Swagger docs available at ${swaggerOpts.definition?.servers?.[0]?.url || 'undefined'}/api`);
 
   // console.log("🚀 ~ swaggerSpec:", JSON.stringify(swaggerSpec, null, 2))
+  console.log('Environment Variables:', process.env);
 })
   
 export default server
