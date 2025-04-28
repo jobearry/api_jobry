@@ -17,5 +17,5 @@ export const swaggerOpts: swaggerJsdoc.Options = {
       }
     ]
   },
-  apis: ['./src/routes/*.ts']
+  apis: isDevelopment? ['./src/routes/*.ts']:['./dist/routes/*.js']
 }

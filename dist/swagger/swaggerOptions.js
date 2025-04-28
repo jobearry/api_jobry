@@ -17,5 +17,5 @@ exports.swaggerOpts = {
             }
         ]
     },
-    apis: ['./src/routes/*.ts']
+    apis: exports.isDevelopment ? ['./src/routes/*.ts'] : ['./dist/routes/*.js']
 };
