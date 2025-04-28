@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.swaggerOpts = exports.isDevelopment = exports.PORT = void 0;
-exports.PORT = 3000;
+exports.PORT = process.env.PORT || 3000;
 exports.isDevelopment = process.env.NODE_ENV === 'development';
 exports.swaggerOpts = {
     definition: {
@@ -13,7 +13,7 @@ exports.swaggerOpts = {
         },
         servers: [
             {
-                url: exports.isDevelopment ? `http://localhost:${exports.PORT}` : process.env.BASE_URL
+                url: exports.isDevelopment ? `http://localhost:${exports.PORT}` : process.env.BASE_URL || `http://localhost:${exports.PORT}`
             }
         ]
     },

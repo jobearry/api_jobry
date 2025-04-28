@@ -1,6 +1,6 @@
 import swaggerJsdoc from 'swagger-jsdoc';
 
-export const PORT = 3000;
+export const PORT = process.env.PORT || 3000;
 export const isDevelopment = process.env.NODE_ENV === 'development';
 export const swaggerOpts: swaggerJsdoc.Options = {
   definition:{
@@ -13,7 +13,7 @@ export const swaggerOpts: swaggerJsdoc.Options = {
 
     servers: [
       {
-        url: isDevelopment?`http://localhost:${PORT}`: process.env.BASE_URL
+        url: isDevelopment?`http://localhost:${PORT}`: process.env.BASE_URL || `http://localhost:${PORT}`
       }
     ]
   },
