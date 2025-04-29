@@ -24,5 +24,6 @@ server.listen(swaggerOptions_1.PORT, () => {
     console.log(`Server is running at ${((_c = (_b = (_a = swaggerOptions_1.swaggerOpts.definition) === null || _a === void 0 ? void 0 : _a.servers) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.url) || 'undefined'}`);
     console.log(`Swagger docs available at ${((_f = (_e = (_d = swaggerOptions_1.swaggerOpts.definition) === null || _d === void 0 ? void 0 : _d.servers) === null || _e === void 0 ? void 0 : _e[0]) === null || _f === void 0 ? void 0 : _f.url) || 'undefined'}/api`);
     // console.log("🚀 ~ swaggerSpec:", JSON.stringify(swaggerSpec, null, 2))
+    // console.log('Environment Variables:', process.env);
 });
 exports.default = server;
