@@ -22,7 +22,7 @@ exports.userRouter = (0, express_1.Router)();
  *                   type: string
  *                   example: gello
  */
-exports.userRouter.get('/api/hello', (req, res) => {
+exports.userRouter.get('/hello', (req, res) => {
     res.json({ message: "gello" });
 });
 /**
