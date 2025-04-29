@@ -22,7 +22,7 @@ exports.userRouter = (0, express_1.Router)();
  *                   type: string
  *                   example: gello
  */
-exports.userRouter.get('/hello', (req, res) => {
+exports.userRouter.get('/api/hello', (req, res) => {
     res.json({ message: "gello" });
 });
 /**
@@ -44,6 +44,6 @@ exports.userRouter.get('/hello', (req, res) => {
  *                   type: string
  *                   example: gello
  */
-exports.userRouter.get('/test', (req, res) => {
+exports.userRouter.get('/api/test', (req, res) => {
     res.json({ message: "gello" });
 });

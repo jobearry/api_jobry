@@ -21,7 +21,7 @@ export const userRouter = Router()
  *                   type: string
  *                   example: gello
  */
-userRouter.get('/hello', (req: Request, res: Response) => {
+userRouter.get('/api/hello', (req: Request, res: Response) => {
   res.json({message:"gello"})
 })
 
@@ -44,6 +44,6 @@ userRouter.get('/hello', (req: Request, res: Response) => {
  *                   type: string
  *                   example: gello
  */
-userRouter.get('/test', (req: Request, res: Response) => {
+userRouter.get('/api/test', (req: Request, res: Response) => {
   res.json({message:"gello"})
 })
