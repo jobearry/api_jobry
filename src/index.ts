@@ -26,5 +26,4 @@ server.listen(PORT, () => {
   // console.log("🚀 ~ swaggerSpec:", JSON.stringify(swaggerSpec, null, 2))
   // console.log('Environment Variables:', process.env);
 })
-  
-export default server
+
