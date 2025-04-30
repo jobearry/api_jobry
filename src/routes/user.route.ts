@@ -44,6 +44,6 @@ userRouter.get('/hello', (req: Request, res: Response) => {
  *                   type: string
  *                   example: gello
  */
-userRouter.get('/api/test', (req: Request, res: Response) => {
+userRouter.get('/test', (req: Request, res: Response) => {
   res.json({message:"gello"})
 })
