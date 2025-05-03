@@ -22,14 +22,22 @@
     "start": "node ./dist/index.js"
   },
   "dependencies": {
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.1",
+    "@arcjet/node": "^1.0.0-beta.6",
+    "@neondatabase/serverless": "^1.0.0",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
+    "@types/helmet": "^0.0.48",
+    "@types/morgan": "^1.9.9",
     "@types/node": "^22.15.3",
     "@types/swagger-jsdoc": "^6.0.4",
-    "@types/swagger-ui-express": "^4.1.8"
+    "@types/swagger-ui-express": "^4.1.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "ts-node": "^10.9.2",

@@ -1,49 +1,45 @@
 import { Router, Request, Response } from "express";
+import { getUsers } from "../controllers/users.controller";
 
 export const userRouter = Router()
-
 /**
  * @openapi
- * /hello:
+ * /users:
  *   get:
- *     summary: Returns a greeting
+ *     summary: Retrieve all users
  *     tags:
  *       - Users
  *     responses:
  *       200:
- *         description: A greeting message
+ *         description: A list of users
  *         content:
  *           application/json:
  *             schema:
  *               type: object
  *               properties:
- *                 message:
- *                   type: string
- *                   example: gello
+ *                 success:
+ *                   type: boolean
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                       username:
+ *                         type: string
+ *                       email:
+ *                         type: string
+ *                       phone:
+ *                         type: string
+ *                       created_at:
+ *                         type: string
+ *                         format: date-time
+ *                       is_active:
+ *                         type: boolean
+ *                       role:
+ *                         type: string
+ *       500:
+ *         description: Internal server error
  */
-userRouter.get('/hello', (req: Request, res: Response) => {
-  res.json({message:"gello"})
-})
-
-/**
- * @openapi
- * /test:
- *   get:
- *     summary: Returns a greeting
- *     tags:
- *       - Users
- *     responses:
- *       200:
- *         description: A greeting message
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: gello
- */
-userRouter.get('/test', (req: Request, res: Response) => {
-  res.json({message:"gello"})
-})
+userRouter.get('/users', getUsers)
